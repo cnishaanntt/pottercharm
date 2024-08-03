@@ -2,7 +2,7 @@
 Celebrate the magic
 
 ## [Live Demo](https://pottercharm.herokuapp.com/)
-![Expecto Patronum](https://github.com/cnishaanntt/ExpectoPatronum/blob/master/expecto.gif)
+![Expecto Patronum](https://github.com/cnishaanntt/pottercharm/blob/master/expecto.gif)
 ## To run locally
 set your environment variables in the config file.
 ```
