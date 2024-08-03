@@ -3,7 +3,7 @@
 module.exports = {
     // set enviroment variables or hard-code here
     credentials: {
-        mongodb_url:'mongodb+srv://cnishaanntt:tyVFCQCNustmaoqq@cluster0.iwwvxjo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+        mongodb_url:process.env.MONGODB_URL,
         gmail_id:process.env.GMAIL_ID,
         gmail_pwd:process.env.GMAIL_PWD,
         walmart_key:process.env.WALMART_KEY,
