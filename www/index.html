@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Expecto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      for(i=0;i<10;i++){
+        $("#btn"+i).text('All good');
+        $("#btn"+i).css({ opacity: 0 });
+      }     
+        $("#sendEmail").hide();
+        $("#sendEmail").click(function() {
+          triggerEmail();
+        });  
+      //When the user submits the details
+      $("#btnSubmit").click ( function() {
+        email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+        if(email_regex.test($("#emailId").val())){
+            userdetails=[];
+            var username = $("#emailId").val();
+            userdetails.username=username;
+            $("#kid_info").hide();    
+        }else{
+          alert('Please Enter a valid Email')
+        }
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <div id="kid_info">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="email" id="emailId">
+        <label class="mdl-textfield__label" for="emailId"> Email...</label>
+      </div>
+      <button  id ="btnSubmit"  type="submit" data-dismiss="modal" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Submit
+      </button>
+  </div>
+  <button type="button" class="btn btn-success" id="btnClear" onclick="clearDrawing()">New</button>
+  <a href="#" id ='btn9' class="badge badge-pill badge-primary">To</a>
+  <a href="#" id ='btn8' class="badge badge-pill badge-secondary">dream</a>
+  <a href="#" id ='btn7' class="badge badge-pill badge-success">the </a>
+  <a href="#" id ='btn6' class="badge badge-pill badge-danger">Impossible</a>
+  <a href="#" id ='btn5' class="badge badge-pill badge-warning">dream</a>
+  <div id="wrapper">  
+    <a href="#" id ='btn4' class="badge badge-pill badge-info">To</a>
+    <a href="#" id ='btn3' class="badge badge-pill badge-light">reach</a>
+    <button type="button" id ='btn2' class="btn btn-warning">that</button>
+    <button type="button" id ='btn0' class="btn btn-success">Unreachable </button>
+    <button type="button" id ='btn1' class="btn btn-primary">Star</button>
+    <canvas id="canvas" resize></canvas>
+    <br>  
+  </div>
+
+  <!--Change Email Id -->
+  <button class="w3-btn w3-ripple w3-green" id="btnInfo">?</button>
+
+   <!--Trigger Email-->
+  <button class="w3-btn w3-ripple w3-green" id="sendEmail">></button>
+
+  <!-- The Modal -->
+  <div id="info" class="modal">
+
+    <!-- Modal content -->
+  
+      <span class="close">x</span>
+      <h1>Expecto*</h1>  
+      <ul>
+        <li> Fill in the email address. </li>
+        <li> Draw your thoughts in the canvas. </li>
+        <li> Click the <b> > </b>icon at the right and experience the magic. </li>
+      </ul>
+
+
+  </div>
+
+  <script src='js/paper-0.9.25.min.js'></script>
+  <script src='js/highcharts-5.0.4.min.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/drawing.js"></script>
+
+</body>
+</html>

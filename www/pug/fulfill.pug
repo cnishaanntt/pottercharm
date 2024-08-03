@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+    head
+        title  Fascinations
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/../css/main.css')     
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css')    
+        link(rel='shortcut icon', href='/../img/favicon.png', type='image')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+
+    body
+        div(class='container-fluid')  
+            div(class='row')
+                div(class='col-sm-4')
+                    a(class='btn btn-default hidden-xs hidden-sm animated wobble slower delay-5s ', href='/') #[i(class='fa fa-home fa-2x', aria-hidden='true')]
+                div(class='col-sm-4')
+                    p   #[h3 Expecto*]
+                div(class='col-sm-4')
+            hr
+            div(class='row')
+                div(class='col-sm-2')
+                div(class='col-sm-8')
+                    div(class='panel-group' )        
+                        div(class='panel panel-default')
+                            div(class='panel panel-heading neo')
+                                p   #[i(class='fa fa-info col-sm-2', aria-hidden='true')]
+                                    h4  #[b Fascinations]                     
+                            div(class='panel panel-body')
+                                ul
+                                    li  
+                                        div(class='row ')
+                                            div(class='col-sm-4 btn-center')
+                                                a(class='btn btn-basic') #[i(class='fa fa-superpowers col-sm-1 col-md-1 hidden-xs', aria-hidden='true')]
+                                            div(class='col-sm-2 btn-center')
+                                                a(class='btn btn-basic') #[i(class='fa fa-eye col-sm-1 col-md-1 hidden-xs', aria-hidden='true')]
+                                            div(class='col-sm-3 btn-center')
+                                                a(class='btn btn-basic') #[i(class='fa fa-free-code-camp col-sm-1 hidden-xs', aria-hidden='true')]
+                                            div(class='col-sm-2 btn-center')
+                                                a(class='btn btn-basic') #[i(class='fa fa-times col-sm-6 hidden-xs', aria-hidden='true')]
+                                    li
+                                        each v, k in imagination
+                                            div(class='row')
+                                                each val, key in {v}
+                                                    div(class='col-sm-4 btn-center')
+                                                        a(class='btn btn-basic hidden-sm hidden-md hidden-lg hidden-xl')   #[b Drawn object]
+                                                        a(class='btn btn-basic')   #{val._id.drawing.toUpperCase()}
+                                                    div(class='col-sm-2 btn-center')
+                                                        a(class='btn btn-basic hidden-sm hidden-md hidden-lg hidden-xl')   #[b Instances]
+                                                        a(class='btn btn-basic')   #{val.count}
+                                                    div(class='col-sm-3 btn-center')
+                                                        a(class='btn btn-success' href='https://www.amazon.com/'+val._id.drawing+'/s?k='+val._id.drawing)  #[i(class='fa fa-free-code-camp col-xs-1', aria-hidden='true')]                                     
+                                                    div(class='col-sm-2 btn-center')
+                                                        a(class='btn btn-basic' href='/grant/delete?drawing='+val._id.drawing+'&username='+val._id.username) #[i(class="fa fa-trash-o", aria-hidden='true')]   
+                                                    div(class='col-sm-1 hidden-sm')
+                                                        hr
+                div(class='col-sm-2')
